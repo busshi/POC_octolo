@@ -13,4 +13,4 @@ Then browse to [The Clock](http://localhost:8080)
 
 ### Notes
 
-Project tested on macOS with M1 chip and inside an Ubuntu VM
+Project tested on macOS and an Ubuntu VM with M1 chip, and also Linux with a x86 processor

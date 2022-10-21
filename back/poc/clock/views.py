@@ -1,8 +1,10 @@
 from django.http import JsonResponse
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 
 def index(request):
-    now = datetime.now()
+    timezone_offset = +2.0
+    tzinfo = timezone(timedelta(hours=timezone_offset))
+    now = datetime.now(tzinfo)
     year = str(now.year)
     month = str(now.month)
     day = str(now.day)
