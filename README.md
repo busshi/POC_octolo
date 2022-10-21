@@ -1,8 +1,8 @@
-## Clock
+### Clock
 
-A simple clock build with VueJS and Django using nginx inside Docker containers
+A simple numeric clock build with VueJS and Django using nginx inside Docker containers
 
-### Usage
+## Usage
 
 - `make` will run containers in detach mode
 - `make log` to see containers logs
@@ -11,7 +11,7 @@ A simple clock build with VueJS and Django using nginx inside Docker containers
 
 Then browse to [The Clock](http://localhost:8080)
 
-### Notes
+## Notes
 
 - Django framework used for the backend (port 8000). Only used to generate curent date and time.
 - VueJS framework used for the frontend (port 1337). Only one component is used to ask the backend for the current time.
