@@ -44,12 +44,6 @@ export default {
         : this.clock.seconds;
     },
   },
-  // computed: {
-  //   clock: function () {
-  //     if (this.clock.hours < 10) return "0" + this.clock.hours;
-  //     else return this.clock.hours;
-  //   },
-  // },
 };
 </script>
 
