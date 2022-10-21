@@ -12,8 +12,6 @@ services:
     working_dir: /opt/app
     restart: unless-stopped
     entrypoint: /bin/sh entrypoint.sh
-    ports:
-      - 8000:8000
     networks:
       - rproxy
 

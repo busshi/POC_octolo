@@ -14,7 +14,7 @@ export default {
   },
   methods: {
     async getClock() {
-      const req = await fetch("http://localhost:8000/clock");
+      const req = await fetch("http://localhost:8080/clock");
       this.clock = await req.json();
     },
   },
