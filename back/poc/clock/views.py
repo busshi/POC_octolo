@@ -1,10 +1,9 @@
 from django.http import JsonResponse
 from datetime import datetime, timezone, timedelta
+import pytz
 
 def index(request):
-    timezone_offset = +2.0
-    tzinfo = timezone(timedelta(hours=timezone_offset))
-    now = datetime.now(tzinfo)
+    now = datetime.now(pytz.timezone('Europe/Paris'))
     year = str(now.year)
     month = str(now.month)
     day = str(now.day)
