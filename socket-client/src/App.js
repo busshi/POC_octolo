@@ -7,11 +7,8 @@ function App() {
   const [socketConnected, setSocketConnected] = useState(false);
   const [currentDate, setCurrentDate] = useState("");
   const [currentTime, setCurrentTime] = useState("");
-  const url = `http://localhost:${
-    process.env.NGINX_PORT ? process.env.NGINX_PORT + "/socket.io" : "8080"
-  }`;
-  console.log(process.env);
-  console.log("url", url);
+  const url = `http://localhost:${process.env.NGINX_PORT || 8000}`;
+
   useEffect(() => {
     setSocket(io(url));
   }, []);
