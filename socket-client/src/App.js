@@ -7,14 +7,13 @@ function App() {
   const [socketConnected, setSocketConnected] = useState(false);
   const [currentDate, setCurrentDate] = useState("");
   const [currentTime, setCurrentTime] = useState("");
-
   const subscribeToDateEvent = (interval = 1000) => {
     socket.emit("subscribeToDateEvent", 3600000);
     socket.emit("subscribeToTimeEvent", interval);
   };
 
   useEffect(() => {
-    setSocket(io("http://localhost:8000"));
+    setSocket(io(`http://localhost:${process.env.PORT || 8000}`));
   }, []);
 
   useEffect(() => {
@@ -41,7 +40,6 @@ function App() {
 
   return (
     <div className="clock">
-      {socketConnected && <div>coucou</div>}
       {socketConnected && currentDate && currentTime ? (
         <>
           {currentDate && <div className="date">{currentDate}</div>}
