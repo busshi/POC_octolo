@@ -25,3 +25,4 @@ Then browse to [The Clock](http://localhost:8080)
 - Socket server listening on port 8000. Run it with `npm i && npm run serve` inside socket-server folder.
 - Socket client listening on port 3000. Run it with `npm i && npm start` inside socket-client folder.
 - Advantage: less requests to the backend because only one connexion is opened between client and server and kept opened until the client disconnected (close the browser, or refresh the page).
+- Using docker-compose, simply `make socket` to run inside containers with nginx
