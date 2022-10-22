@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>{{ hours }}:{{ minutes }}:{{ seconds }}</h1>
-    <h2>{{ clock.day }} {{ month }} {{ clock.year }}</h2>
+    <h2>{{ clock.day }}/{{ month }}/{{ clock.year }}</h2>
   </div>
 </template>
 
@@ -28,21 +28,7 @@ export default {
   },
   computed: {
     month: function () {
-      const months = [
-        "Janvier",
-        "Février",
-        "Mars",
-        "Avril",
-        "Mai",
-        "Juin",
-        "Juillet",
-        "Août",
-        "Septembre",
-        "Octobre",
-        "Novembre",
-        "Décembre",
-      ];
-      return months[this.clock.month - 1];
+      return this.clock.month < 10 ? "0" + this.clock.month : this.clock.month;
     },
     hours: function () {
       return this.clock.hours < 10 ? "0" + this.clock.hours : this.clock.hours;
