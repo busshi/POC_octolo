@@ -23,6 +23,10 @@ Then browse to [The Clock](http://localhost:8080)
 
 - Socket implementation with expressJS and a React app
 - Socket server listening on port 8000. Run it with `npm i && npm start` inside socket-server folder.
-- Socket client listening on port 3000. Run it with `npm i && npm start` inside socket-client folder.
+- Socket client listening on port 3000. Run it with `npm i && npm start` inside socket-client folder. to [The Clock](http://localhost:3000)
 - Advantage: less requests to the backend because only one connexion is opened between client and server and kept opened until the client disconnected (close the browser, or refresh the page).
+- Docker-compose usage:
+  - `make socket` to start containers. Then browse to [The Clock](http://localhost:3000)
+  - `make socket stop` to stop containers
 - Important note: for some reason, Firefox can block request due to security policy. You can disable it: `about:config -> security.fileuri.strict_origin_policy -> false`
+- Tested on Safari and Firefox.
