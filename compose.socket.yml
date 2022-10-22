@@ -1,0 +1,48 @@
+version: "3"
+
+networks:
+  socket-rproxy:
+
+services:
+  socket_back:
+    image: node:16-alpine
+    container_name: socket_back
+    volumes:
+      - ./socket-server:/opt/app
+    working_dir: /opt/app
+    restart: unless-stopped
+    entrypoint: /bin/sh entrypoint.sh
+    networks:
+      - socket-rproxy
+    ports:
+      - 8000:8000
+    # environment:
+    #   - NGINX_PORT=8080
+
+  socket_front:
+    image: node:16-alpine
+    container_name: socket_front
+    volumes:
+      - ./socket-client:/opt/app
+    working_dir: /opt/app
+    restart: unless-stopped
+    entrypoint: /bin/sh entrypoint.sh
+    networks:
+      - socket-rproxy
+    ports:
+      - 3000:3000
+    # environment:
+    #   - NGINX_PORT=8080
+
+  # socket_nginx-rproxy:
+  #   image: nginx:1.21.5-alpine
+  #   networks:
+  #     - socket-rproxy
+  #   volumes:
+  #     - ./rproxy-socket.nginx.conf:/etc/nginx/nginx.conf
+  #   ports:
+  #     - 8080:80
+  #   restart: unless-stopped
+  #   depends_on:
+  #     - socket_back
+  #     - socket_front
