@@ -18,7 +18,6 @@ const socket = (io) => {
         sec = sec < 10 ? "0" + sec : sec;
 
         const time = `${hours + ":" + min + ":" + sec}`;
-
         client.emit("getTime", time);
       }, interval);
     });
