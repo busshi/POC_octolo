@@ -1,0 +1,17 @@
+.clock {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.time {
+  font-size: 60px;
+}
+
+.date {
+  font-size: 30px;
+}
