@@ -1,0 +1,28 @@
+{
+  "name": "socket-io-nodejs",
+  "version": "1.0.0",
+  "description": "Socket server",
+  "main": "index.js",
+  "scripts": {
+    "serve": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/busshi/POC_octolo.git"
+  },
+  "keywords": [],
+  "author": "busshiDev",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/busshi/POC_oc/issues"
+  },
+  "homepage": "https://github.com/busshi/POC_octolo#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}

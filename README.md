@@ -18,3 +18,10 @@ Then browse to [The Clock](http://localhost:8080)
 - Nginx used as a reverse proxy to keep the communication open between the backend and the frontend inside an internal network, but the outside cannot reach the backend directly. The front is accessible on port 8080.
 - Docker-compose is used to create containers for a maximum compatibility and portability.
 - This Project was tested on macOS and on an Ubuntu VM with M1 chip, and also Linux with a x86 processor.
+
+## Alternative with sockets
+
+- Socket implementation with expressJS and a React app
+- Socket server listening on port 8000. Run it with `npm i && npm run serve` inside socket-server folder.
+- Socket client listening on port 3000. Run it with `npm i && npm start` inside socket-client folder.
+- Advantage: less requests to the backend because only one connexion is opened between client and server and kept opened until the client disconnected (close the browser, or refresh the page).
