@@ -10,13 +10,4 @@ stop:
 down:
 	docker-compose down
 
-socket:
-	docker-compose -f compose.socket.yml up --build
-
-socket-stop:
-	docker-compose -f compose.socket.yml stop
-
-socket-down:
-	docker-compose -f compose.socket.yml down
-
-.PHONY: log stop down socket socket-stop socket-down
+.PHONY: log stop down socket
